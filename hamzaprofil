@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hamza.css">
+    <title>welcome to my profile</title>
+</head>
+
+
+
+<body>
+<header>
+    <h1>BARDICH HAMZA</h1>
+</header>
+
+<section class="section-1">
+    <h2>À propos de moi</h2>
+    <div>
+    <img src="c:\Users\HP\Downloads\WhatsApp Image 2024-10-27 at 15.50.27.jpeg" alt="meee" width="160" height="160">
+    <p>bonjour a tous , je suis Bardich hamza , etudiant en 3eme année de l'EMSI 
+        suivant une formation d'ingénieur en informatique.<br>
+    j'aimerai bien que vous trouverez mon profile facile a comprendre </p>
+    
+</div>
+</section>
+
+<section class="section-2">
+    <h2>Hobbies et Objectifs</h2>
+    <h3>Hobbies</h3>
+        <ul>
+            <li>programmation</li>
+            <li>bodybuilding et sport en général</li>
+            <li>L'astronomie </li>
+        </ul>
+    <h3>Objectifs</h3>
+        <ol type="A">
+            <li>améliorer mes soft-skills</li>
+            <li>maitriser des nouveaux langage de programmations</li>
+            <li>réussir mon année avec un bonne note</li>
+            <li>faire un trés bon stage a la fin de l'année</li>
+        </ol>
+</section>
+
+<section class="section-3">
+    <h2>Tableau d'Amis</h2>
+    <table border="10">
+        <tr>
+            <th>Nom</th>
+            <th>Âge</th>
+            <th>Ville</th>
+            <th>Profil</th>
+        </tr>
+        <tr>
+            <td>Mehdi</td>
+            <td>20</td>
+            <td>EL JADIDA</td>
+            <td><a href="https://github.com/mehdiola/mehdi/blob/main/sitefinal/mehdi.js">Voir Profil</a></td>
+        </tr>
+        <tr>
+            <td>TAHA</td>
+            <td>20</td>
+            <td>CASABLACA</td>
+            <td><a href="https://github.com/Devinboker/prjt-php/tree/main/profile_avance.html">Voir Profil</a></td>
+        </tr>
+        <tr>
+            <td>SALAHEDDINE</td>
+            <td>20</td>
+            <td>CASABLANCA</td>
+            <td><a href="https://github.com/salaheddine-bq/site-perso-salaheddine-bq">Voir Profil</a></td>
+        </tr>
+       
+    </table>
+</section>
+
+<section class="section-4">
+    <h2>Contacte</h2>
+    <form id="contactForm" >
+        <label for="name">Nom:</label><br>
+        <input type="text" id="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required>
+        <br>
+        <label for="message">Message:</label><br>
+        <textarea id="message"></textarea>
+        <br>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+ 
+
+<script src="hamza.js"></script>
+
+</body>
+
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #bef7be; 
+    color: #000000; 
+    margin: 2px;
+    padding: 0px;
+    line-height: 1,4; 
+    
+}
+header {
+    font-family:cursive;
+    background-color: #000000;
+    color: white;
+    padding: 1px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+div{
+    display: flex;
+    padding: 42px;
+}
+.section-1{
+background-color: #ffffff;
+}
+.section-2{
+background-color: #ffffff;
+}
+.section-3{
+background-color: #ffffff;
+}
+.section-4{
+    background-color: #ffffff;
+}
+img{
+   border-radius: 30px;
+}
+h2{
+    font-size: 42px;
+    color: #0f780f;
+}
+h3{
+    color: #507850;
+    font-family: monospace;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #0bb867;
+    text-align: center;
+    padding: 20px;
+}
+
+th {
+    background-color: #507850;
+    color: white;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 5px solid #507850;
+    border-radius: 20px;
+}
+button {
+    padding: 10px;
+    background-color: #507850;
+    color: rgb(3, 3, 3);
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    section {
+        margin: 10px 0;
+    }
+}
+
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+    if (name === '' || email === '') {
+        alert('Veuillez remplir tous les champs obligatoires.');
+    } else if (!emailPattern.test(email)) {
+        alert('Veuillez entrer une adresse email valide.');
+    } else {
+        alert('Formulaire soumis avec succès !');
+        this.reset(); 
+    }
+});
